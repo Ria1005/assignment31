@@ -2,10 +2,11 @@ pipeline {
     agent any
 
     stages {
+
         stage('Clone Repository') {
             steps {
                 echo 'Cloning from GitHub...'
-                checkout scm
+                git 'https://github.com/Ria1005/assignment31.git'
             }
         }
 
@@ -25,18 +26,18 @@ pipeline {
 
         stage('Verify') {
             steps {
-                echo 'Containers are running!'
-                bat 'docker-compose ps'
+                echo 'Checking containers...'
+                bat 'docker ps'
             }
         }
     }
 
     post {
         success {
-            echo 'Pipeline completed successfully!'
+            echo '✅ Pipeline Success 🚀'
         }
         failure {
-            echo 'Something went wrong.'
+            echo '❌ Pipeline Failed'
         }
     }
 }
