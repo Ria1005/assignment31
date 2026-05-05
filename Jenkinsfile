@@ -12,21 +12,21 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 echo 'Building Docker images...'
-                sh 'docker-compose build'
+                bat 'docker-compose build'
             }
         }
 
         stage('Run Containers') {
             steps {
                 echo 'Starting containers...'
-                sh 'docker-compose up -d'
+                bat 'docker-compose up -d'
             }
         }
 
         stage('Verify') {
             steps {
                 echo 'Containers are running!'
-                sh 'docker-compose ps'
+                bat 'docker-compose ps'
             }
         }
     }
