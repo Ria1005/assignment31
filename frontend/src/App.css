@@ -1,71 +1,120 @@
 body {
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #f5f7fb;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(270deg, #667eea, #764ba2, #ff6a88, #00c6ff);
+  background-size: 600% 600%;
+  animation: gradientBG 12s ease infinite;
+  min-height: 100vh;
+}
+
+/* 🌈 Background animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .App {
   padding: 30px;
 }
 
+/* 🔥 Title */
 h1 {
   text-align: center;
   margin-bottom: 30px;
-  color: #2c3e50;
+  color: white;
+  font-size: 34px;
+  text-shadow: 0 0 15px rgba(255,255,255,0.6);
 }
 
+/* 🧊 Glass Cards */
 .section {
-  background: white;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
   padding: 20px;
   margin-bottom: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  color: white;
+  box-shadow: 
+    0 10px 30px rgba(0,0,0,0.4),
+    inset 0 0 10px rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
 }
 
+/* 💥 Hover 3D */
+.section:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Heading */
 .section h2 {
   margin-bottom: 15px;
-  color: #34495e;
 }
 
+/* Inputs */
 input, select {
-  padding: 8px 10px;
-  margin-right: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  outline: none;
-}
-
-input:focus, select:focus {
-  border-color: #007bff;
-}
-
-button {
-  padding: 8px 14px;
+  padding: 10px;
+  margin: 6px;
+  border-radius: 8px;
   border: none;
-  border-radius: 6px;
-  background: #007bff;
+  outline: none;
+  background: rgba(255,255,255,0.2);
   color: white;
-  cursor: pointer;
   transition: 0.3s;
 }
 
-button:hover {
-  background: #0056b3;
+input::placeholder {
+  color: #ddd;
 }
 
+input:focus, select:focus {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.3);
+  box-shadow: 0 0 10px #00c6ff;
+}
+
+/* 🔥 Buttons */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff, #ff6a00);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(0,198,255,0.7);
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255,106,0,1);
+}
+
+/* List */
 .list {
   margin-top: 15px;
 }
 
+/* List items */
 .list-item {
-  background: #f1f3f6;
-  padding: 10px;
-  margin-bottom: 8px;
-  border-radius: 6px;
+  background: rgba(255,255,255,0.2);
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
 }
 
+.list-item:hover {
+  transform: scale(1.02);
+  background: rgba(255,255,255,0.3);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* Container */
 .container {
   max-width: 900px;
   margin: auto;
