@@ -3,13 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clone Repository') {
-            steps {
-                echo 'Cloning from GitHub...'
-                git 'https://github.com/Ria1005/assignment31.git'
-            }
-        }
-
         stage('Build Docker Images') {
             steps {
                 echo 'Building Docker images...'
